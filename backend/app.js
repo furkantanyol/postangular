@@ -10,7 +10,9 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://ftanyol:tanyol92@cluster0-kaayt.mongodb.net/mean-course?retryWrites=true&w=majority",
+    "mongodb+srv://ftanyol:" +
+      process.env.MONGO_ATLAS_PASSWORD +
+      "@cluster0-kaayt.mongodb.net/mean-course?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
